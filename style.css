@@ -1,0 +1,526 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    scroll-behavior: smooth;
+    font-family: 'poppins', sans-serif;
+}
+
+body {
+    background-color: #1f242d;
+    color: #fff;
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 10%;
+    background: transparent;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+
+.logo {
+    font-size: 25px;
+    color: #fff;
+    font-weight: 600;
+    cursor: pointer;
+    animation: slideRight 1s ease forwards;
+}
+
+.navbar a {
+    display: inline-block;
+    font-size: 18px;
+    color: #fff;
+    font-weight: 500;
+    margin-left: 35px;
+    transition: .3s;
+    animation: slidetop .5s ease forwards;
+    animation-delay: calc(.2s * var(--i));
+}
+
+
+.navbar a:hover,
+.navbar a.active {
+    color: #0ef;
+}
+
+.home {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 60px 10% 0;
+}
+
+.home-content {
+    max-width: 600px;
+}
+
+.home-content h1 {
+    font-size: 54px;
+    font-weight: 700;
+    margin: -3px 0;
+    opacity: 0;
+    animation: slideRight 1s ease forwards;
+    animation-delay: 1s;
+}
+
+.home-content h3 {
+    font-size: 32px;
+    font-weight: 700;
+    opacity: 0;
+    animation: slidebottom 1s ease forwards;
+    animation-delay: .7s;
+}
+
+.home-content h3:nth-of-type(2) {
+    margin-bottom: 30px;
+    animation: slidetop 1s ease forwards;
+    animation-delay: .7s;
+}
+
+.home-content h3 span {
+    color: #0ef;
+}
+
+.home-content p {
+    font-size: 16px;
+    opacity: 0;
+    animation: slideleft 1s ease forwards;
+    animation-delay: .7s;
+}
+
+.home-img img {
+    max-width: 450px;
+    margin-right: -20px;
+    opacity: 0;
+    animation: zoomin 1s ease forwards;
+    animation-delay: .2s;
+}
+
+.social-media a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    background: transparent;
+    border: 2px solid #0ef;
+    border-radius: 50%;
+    font-size: 20px;
+    color: #0ef;
+    text-decoration: none;
+    margin: 30px 15px 30px 0;
+    transition: .5s ease;
+    opacity: 0;
+    animation: slideleft 1s ease forwards;
+    animation-delay: calc(.2s * var(--i));
+}
+
+.social-media a:hover {
+    background-color: #0ef;
+    color: #1f242d;
+    box-shadow: 0 0 20px #0ef;
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 28px;
+    background: #0ef;
+    border-radius: 40px;
+    box-shadow: 0 0 10px #0ef;
+    font-size: 16px;
+    color: #1f242d;
+    letter-spacing: 1px;
+    font-weight: 600;
+    opacity: 0;
+    animation: slidetop 1s ease forwards;
+    animation-delay: .2s;
+
+}
+
+/* For heading */
+@keyframes slideRight {
+    0% {
+        transform: translateX(-100px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+
+    }
+
+}
+
+/* for paragraph */
+@keyframes slideleft {
+    0% {
+        transform: translateX(100px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+
+    }
+
+}
+
+/* For Navbar */
+@keyframes slidetop {
+    0% {
+        transform: translateY(100px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+
+    }
+
+}
+
+/* for content h3 */
+@keyframes slidebottom {
+    0% {
+        transform: translateY(-100px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+
+    }
+
+}
+
+/* for image */
+@keyframes zoomin {
+    0% {
+        transform: scale(0);
+        opacity: 0;
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 1;
+
+    }
+
+}
+/* LETS MAKE IT RESPONSIVEEEEEE */
+@media (max-width: 1280px) {
+    html {
+        font-size: 50%;
+    }
+
+    .home-content {
+        position: relative;
+        font-size: 10rem;
+        top: 2rem;
+
+    }
+
+    .home-img img {
+        width: 35vw;
+        margin-right: -7rem;
+    }
+
+    .social-media {
+        position: relative;
+        bottom: 4rem;
+    }
+
+    .btn {
+        position: absolute;
+        padding: -2rem;
+
+    }
+}
+
+@media (max-width: 1185px) {
+    .home-content h1 {
+        font-size: 6rem;
+    }
+
+
+}
+
+@media (max-width: 1040px) {
+    .home-content h1 {
+        font-size: 5rem;
+
+    }
+
+}
+
+@media (max-width: 930px) {
+    .navbar {
+        position: relative;
+        left: 7rem;
+    }
+
+}
+
+@media (max-width: 850) {
+    .navbar {
+        font-size: 9px;
+    }
+
+    .home-content {
+        position: relative;
+        top: 4rem;
+    }
+
+    .home-content h1 {
+        font-size: 4rem;
+    }
+
+    .home-content h3 {
+        font-size: 3rem;
+    }
+}
+
+@media (max-width: 834px) {
+    .navbar a {
+        font-size: 16px;
+    }
+
+}
+
+@media (max-width: 847px) {
+    .navbar a {
+        font-size: 16px;
+    }
+    .home-content h1 {
+        font-size: 4rem;
+    }
+    .home-content h3 {
+        font-size: 3rem;
+    }
+
+
+}
+
+@media (max-width: 785px) {
+    .navbar a {
+        font-size: 14px;
+    }
+}
+
+
+@media (max-width: 768px) {
+    .home {
+        display: inline-block;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .navbar {
+        width: 100%;
+        padding: 0 3%;
+
+    }
+
+    .logo {
+        font-size: 20px;
+        width: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .navbar a {
+        font-size: 15px;
+        display: inline;
+        margin: 0 1rem;
+    }
+
+    .home-content {
+        position: relative;
+        font-size: 16px;
+        top: 70rem;
+    }
+
+    .home-content h1 {
+        position: relative;
+        font-size: 5rem;
+
+    }
+
+    .home-content h3 {
+        font-size: 3.5rem;
+    }
+
+    .home-content h3 span {
+        font-size: 3rem;
+    }
+
+    .home-content p {
+        font-size: 1.6rem;
+    }
+
+    .home-img img {
+        position: relative;
+        bottom: 44rem;
+        left: 10rem;
+        width: 50vw;
+        
+
+    }
+    .social-media{
+        padding: 30px 0;
+    }
+}
+@media (max-width: 760px) {
+    .navbar a{
+        font-size: 14px;
+    }
+
+}
+@media (max-width: 720.45px) {
+    .navbar a{
+        font-size: 13px;
+    }
+
+}
+@media (max-width: 721.60px) {
+    .navbar a{
+        font-size: 12.5px;
+    }
+
+}
+@media (max-width: 722.40px) {
+    .navbar a{
+        font-size: 12.5px;
+    }
+
+}
+@media (max-width: 667px) {
+    .navbar a{
+        font-size: 12px;
+    }
+
+}
+@media (max-width: 648px) {
+    .navbar a{
+        font-size: 11.5px;
+    }
+
+}
+@media (max-width: 628px) {
+    .navbar a{
+        font-size: 11px;
+    }
+
+}
+@media (max-width: 609.60px) {
+    .header{
+        display: inline-block;
+        justify-content: center;
+        align-items: center;
+    }
+    .logo{
+        width: 100%;
+
+    }
+    .navbar a{
+        position: relative;
+        top: 3rem;
+        right: 2rem;
+        font-size: 2.1rem;
+    }
+    .home-img img{
+        position: absolute;
+        width: 70%;
+        top: 19rem;
+
+    }
+    .home-content{
+        position: relative;
+        top: 100%;
+    }
+}
+@media (max-width: 562.40px) {
+    .navbar a{
+        position: relative;
+        right: 4rem;
+    }
+    .home-content h1{
+       font-size: 4rem;
+    }
+    .home-content h3{
+        font-size: 3rem;
+     }
+
+}
+@media (max-width: 545.60px){
+    .navbar a{
+        font-size: 16px;
+    }
+
+}
+@media (max-width: 526.40px){
+    .navbar a{
+        font-size: 15px;
+    }
+}
+@media (max-width: 501.60px){
+    .navbar a{
+        font-size: 14.5px;
+    }
+}
+@media (max-width: 489.60px){
+    .navbar a{
+        font-size: 14px;
+        
+    }
+}
+@media (max-width: 477.60px){
+    .navbar a{
+        font-size: 13px;
+        
+    }
+}
+@media (max-width: 452px){
+    .navbar a{
+        font-size: 12.5px;
+        
+    }
+    .home-content h1{
+        font-size: 3.5rem;
+    }
+    .home-content h3{
+        font-size: 2.4rem;
+    }
+}
+@media (max-width: 440px) {
+    .navbar a{
+        font-size: 12px;
+    }
+    .home-content{
+        position: relative;
+        bottom: 8rem;
+    }
+    .home-img img{
+        position: absolute;
+        width: 100%;
+        left: -1rem;
+    }
+    
+}
